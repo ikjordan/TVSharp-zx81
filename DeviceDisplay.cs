@@ -9,28 +9,28 @@ using System;
 #nullable disable
 namespace TVSharp
 {
-  public class DeviceDisplay
-  {
-    public uint Index { get; private set; }
-
-    public string Name { get; set; }
-
-    public static DeviceDisplay[] GetActiveDevices()
+    public class DeviceDisplay
     {
-      uint deviceCount = NativeMethods.rtlsdr_get_device_count();
-      DeviceDisplay[] activeDevices = new DeviceDisplay[(IntPtr) deviceCount];
-      for (uint index = 0; index < deviceCount; ++index)
-      {
-        string deviceName = NativeMethods.rtlsdr_get_device_name(index);
-        activeDevices[(IntPtr) index] = new DeviceDisplay()
-        {
-          Index = index,
-          Name = deviceName
-        };
-      }
-      return activeDevices;
-    }
+        public uint Index { get; private set; }
 
-    public override string ToString() => this.Name;
-  }
+        public string Name { get; set; }
+
+        public static DeviceDisplay[] GetActiveDevices()
+        {
+            uint deviceCount = NativeMethods.rtlsdr_get_device_count();
+            DeviceDisplay[] activeDevices = new DeviceDisplay[(int)(IntPtr)deviceCount];
+            for (uint index = 0; index < deviceCount; ++index)
+            {
+                string deviceName = NativeMethods.rtlsdr_get_device_name(index);
+                activeDevices[(int)(IntPtr)index] = new DeviceDisplay()
+                {
+                    Index = index,
+                    Name = deviceName
+                };
+            }
+            return activeDevices;
+        }
+
+        public override string ToString() => this.Name;
+    }
 }

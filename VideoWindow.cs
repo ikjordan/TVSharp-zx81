@@ -33,21 +33,22 @@ namespace TVSharp
       this.videoPanel.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
       this.videoPanel.Location = new Point(2, 3);
       this.videoPanel.Name = "videoPanel";
-      this.videoPanel.Size = new Size(421, 323);
+      this.videoPanel.Size = new Size(512, 318);
       this.videoPanel.TabIndex = 0;
       this.AutoScaleDimensions = new SizeF(6f, 13f);
       this.AutoScaleMode = AutoScaleMode.Font;
       this.AutoValidate = AutoValidate.EnableAllowFocusChange;
-      this.ClientSize = new Size(424, 327);
+      this.ClientSize = new Size(515, 322);
       this.ControlBox = false;
       this.Controls.Add((Control) this.videoPanel);
       this.FormBorderStyle = FormBorderStyle.SizableToolWindow;
-      this.Name = nameof (VideoWindow);
+      this.Name = "VideoWindow";
       this.ShowIcon = false;
       this.ShowInTaskbar = false;
       this.Text = "Video";
       this.ResizeBegin += new EventHandler(this.VideoWindows_ResizeBegin);
       this.Resize += new EventHandler(this.VideoWindows_Resize);
+      this.components = null;
       this.ResumeLayout(false);
     }
 

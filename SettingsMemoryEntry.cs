@@ -24,6 +24,8 @@ namespace TVSharp
     private long[] _palSecamChannelFrequency;
     private long[] _ntscChannelFequency;
     private bool _inverseVideo;
+    private int _xAdjust;
+    private int _yAdjust;
 
     public SettingsMemoryEntry()
     {
@@ -123,5 +125,7 @@ namespace TVSharp
       get => this._inverseVideo;
       set => this._inverseVideo = value;
     }
+    public int YAdjust { get => _yAdjust; set => _yAdjust = value; }
+    public int XAdjust { get => _xAdjust; set => _xAdjust = value; }
   }
 }

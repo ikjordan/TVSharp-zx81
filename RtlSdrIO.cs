@@ -39,7 +39,7 @@ namespace TVSharp
           this.SelectDevice(deviceDisplay.Index);
           return;
         }
-        catch (ApplicationException ex)
+        catch
         {
         }
       }
@@ -58,7 +58,7 @@ namespace TVSharp
       this._rtlDevice = (RtlDevice) null;
     }
 
-    public void Start(SamplesReadyDelegate callback)
+    public unsafe void Start(SamplesReadyDelegate callback)
     {
       if (this._rtlDevice == null)
         throw new ApplicationException("No device selected");

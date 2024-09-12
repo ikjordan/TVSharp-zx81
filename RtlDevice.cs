@@ -33,7 +33,7 @@ namespace TVSharp
     private unsafe Complex* _iqPtr;
     private Thread _worker;
     private readonly SamplesAvailableEventArgs _eventArgs = new SamplesAvailableEventArgs();
-    private static readonly RtlSdrReadAsyncDelegate _rtlCallback = new RtlSdrReadAsyncDelegate(RtlDevice.RtlSdrSamplesAvailable);
+    private unsafe static readonly RtlSdrReadAsyncDelegate _rtlCallback = new RtlSdrReadAsyncDelegate(RtlDevice.RtlSdrSamplesAvailable);
     private static readonly uint _readLength = 32768;
 
     public RtlDevice(uint index)
